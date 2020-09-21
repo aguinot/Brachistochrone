@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1600696963 "Brachisto_notes.tex" "Brachisto_notes.pdf" "Brachisto_notes" 1600696964
+["pdflatex"] 1600727879 "Brachisto_notes.tex" "Brachisto_notes.pdf" "Brachisto_notes" 1600727880
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -77,11 +77,11 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1576080087 4259637 0ed3101e6b763bc88487accd07975461 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Brachisto_notes.aux" 1600696964 1070 0f461b1f736a5fa6a05e7f034cfe1e75 "pdflatex"
-  "Brachisto_notes.out" 1600696963 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Brachisto_notes.tex" 1600696963 7400 9aea451366bb48b42b041f614de8a6e1 ""
+  "Brachisto_notes.aux" 1600727880 1070 0f461b1f736a5fa6a05e7f034cfe1e75 "pdflatex"
+  "Brachisto_notes.out" 1600727879 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Brachisto_notes.tex" 1600727878 7542 f80dfa4e6e7649e82012817c2578e54c ""
   (generated)
-  "Brachisto_notes.aux"
   "Brachisto_notes.pdf"
   "Brachisto_notes.out"
   "Brachisto_notes.log"
+  "Brachisto_notes.aux"

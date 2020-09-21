@@ -1,0 +1,144 @@
+%This is my super simple Real Analysis Homework template
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\newcommand\myshade{85}
+\colorlet{mylinkcolor}{violet}
+\colorlet{mycitecolor}{YellowOrange}
+\colorlet{myurlcolor}{Aquamarine}
+\hypersetup{
+  linkcolor  = mylinkcolor!\myshade!black,
+  citecolor  = mycitecolor!\myshade!black,
+  urlcolor   = myurlcolor!\myshade!black,
+  colorlinks = true,
+}
+
+\title{Brachistochrone}
+\author{Sylvain Vanneste}
+\date\today
+%This information doesn't actually show up on your document unless you use the maketitle command below
+
+\begin{document}
+\maketitle %This command prints the title based on information entered above
+
+
+\subsection*{Problem set up}
+
+
+Akara live up a cliff, and she would likes to send gifts via a roller-coster to her friend Buni which lives just a little further down in the valley. She built a tubular structure with super-conductive magnets, such that there is no air friction, as well as no contact friction (since the wagons are levitating). There is no engine, and the packages are simply dropped with no initial speed on the rail and left to the gravitational pull of earth.
+
+However, she would like to know what shape to give to its roller-coster in order to minimise the time a package takes to arrive to her friend.
+
+
+
+In order to picture the problem, we will consider the origin of the referential placed at Akara'house, and Buni coordinates are noted $(x_B, y_B)$. For the problem to be possible, we consider that Buni's house is lower than Akara's. That is to say, $y_B < 0$
+
+
+
+\subsection*{Historical introduction}
+
+Johann Bernoulli posed the same problem in June, 1696. Well, without the roller-coster and superconductive magnets part :
+
+"Given two points A and B in a vertical plane, what is the curve traced out by a point acted on only by gravity, which starts at A and reaches B in the shortest time.
+
+At 4 p.m. on 29 January 1697 when he arrived home from the Royal Mint, Isaac Newton found the challenge in a letter from Johann Bernoulli. Newton stayed up all night to solve it and mailed the solution anonymously.
+
+In an attempt to outdo his brother, Jakob Bernoulli created a harder version of the brachistochrone problem. In solving it, he developed new methods that were refined by Leonhard Euler into what the latter called (in 1766) the calculus of variations. Joseph-Louis Lagrange did further work that resulted in modern infinitesimal calculus.
+
+\section*{Personal notes}
+
+We want to minimise the time it take for an object to goes from $A$ to $B$, $t_{AB}$. We define $v$ as the speed of the object, $g$ the gravitational constant, and $m$ the object's mass. The trajectory of the object can be defined by relation between its horizontal and vertical position, $y = f(x)$. For simplicity, we will write $y = y(x) = f(x)$.
+
+Using energy conservation, we have
+\begin{align}
+  &E_{\text p} + E_{\text c} = E_{\text{pi}} + E_{\text{ci}}\nonumber\\
+\Leftrightarrow~ & mgy + \frac 12 m v^2 = mgy_A + 0\nonumber\\
+\Leftrightarrow~& v(y) = \sqrt{2 g(y_A - y)}, \label{eq:vtoy}
+\end{align}
+where $v(y)$ is a function of the object heigh $y$.
+
+The time $t_{AP}$ for the object to go from point $A$ to an arbitrary position $P$, with $P\in[A, B]$, is written
+\begin{align}
+t_{AP} = \int \frac{\text d s }{v(y)}, \label{timeAP}
+\end{align}
+with $\text d s $ the infinitesimal distance increment of the object. It can be expressed using Pythagorean law
+\begin{align}
+\text d s^2  &= \text d x^2 + \text d y^2 \nonumber\\
+\Leftrightarrow~ \text d s &= \sqrt{1 + \frac{\text d y^2}{\text d x^2}}\text d x\nonumber\\
+ & = \sqrt{1 + y'^2}\text d x,\label{eq:dstodx}
+\end{align}
+where the derivative of the function is written $y' = \text d y/\text d x = f(x)'$.
+
+Using Eqs. \eqref{eq:vtoy} and \eqref{eq:dstodx}, we can now simplify the time Eq. \eqref{timeAP},
+\begin{align}
+t_{AP} &= \int_A^P \frac{\text d s }{v(y)},\nonumber\\
+&= \int_{x_A}^{x_P} \frac{\sqrt{1 + y'^2(x)}}{\sqrt{2 g(y_A - y(x))}} \text d x,\nonumber\\
+&= \frac 1{\sqrt{2 g}} \int_{x_A}^{x_P} \frac{\sqrt{1 + y'^2(x)}}{\sqrt{(y_A - y(x))}} \text d x, \label{eq:tAP}
+\end{align}
+
+Therefore, the time $t_{AB}$ the object takes to go from point $A$ to $B$ is depends on the trajectory $y(x)$. Seeking a minimising this time is equivalent to seek for a function $y(x)$ which minimise the Eq. \eqref{eq:tAP} (where $x_P = x_B$).
+
+Before seeking for such solution, we first compare the physical behaviour for some known functions $y(x)$, namely : the straight line, the reciprocal function, and a second order polynomial function.
+
+\subsection*{The straight line}
+
+The straight line between point $A$ and $B$ can be expressed as
+\begin{align}
+y = \alpha x + \beta,
+\end{align}
+where $\alpha = (y_B-y_A)/(x_B - x_A)$ and $\beta = y_A - \alpha x_A$. The function derivative is therefore $y' = \alpha$, and the time for an object to reach a point $P$ is written
+\begin{align}
+t(x) &= \frac 1{\sqrt{2 g}} \int_{x_A}^{x_P} \frac{\sqrt{1 + y'^2(x)}}{\sqrt{(y_A - y(x))}} \text d x,\nonumber\\
+&= \frac 1{\sqrt{2 g}} \int_{x_A}^{x_P} \frac{\sqrt{1 + \alpha^2}}{\sqrt{y_A - \alpha x - \beta }} \text d x,\nonumber\\
+&=  \sqrt{\frac{1 + \alpha^2}{2 g}} \int_{x_A}^{x_P} \frac{1}{\sqrt{y_A - \alpha x - \beta }} \text d x,\nonumber\\
+&=  - \sqrt{\frac{1 + \alpha^2}{2 g}} \frac 2 \alpha \left[ \sqrt{y_A - \alpha x - \beta }  \right]_{x_A}^{x_P},\nonumber\\
+&=  - \sqrt{\frac{1 + \alpha^2}{2 g}} \frac 2 \alpha \left[ \sqrt{y_A - \alpha x_P - \beta } - \sqrt{y_A - \alpha x_A - \beta }  \right]\label{eq:tAP_straight}
+\end{align}
+
+Conversely, the position $x_P$ can be written as a function of the time,
+\begin{align}
+x_P(t) = -\frac 1 \alpha \left [ \left(- t \frac{\alpha}{2} \sqrt{\frac{2g}{1 + \alpha^2}} + \sqrt{-\alpha x_A- \beta + y_A}\right)^2 - \beta + y_A \right].
+\end{align}
+
+\subsection*{The reciprocal function}
+
+We now choose the reciprocal function
+\begin{align}
+y(x) = \frac1{x+\gamma} + \eta,
+\end{align}
+therefore $y'(x) = -(x+\gamma)^{-2}$.
+
+Since $x_A = 0$ and $y_A=0$, we have $\eta = -1/\gamma$, and $\displaystyle \gamma = \pm\frac{\sqrt{x_B} \sqrt{- x_B y_B + 4}}{2\sqrt{x_B}} - \frac{x_B}2$. We choose the $+$ sign for the second condition in order for $y(x)$ to be convex.
+
+The time for an object to reach a point $P$ is computed by numerical integration, following
+\begin{align}
+t(x) &= \frac 1{\sqrt{2 g}} \int_{x_A}^{x_P} \frac{\sqrt{1 + y'^2(x)}}{\sqrt{(y_A - y(x))}} \text d x.\\
+\label{eq:tAP_reciprocal}
+\end{align}
+
+\subsection*{2nd order polynomial function}
+
+We now choose a 2nd order polynomial function of the form
+\begin{align}
+y(x) = a x^2 + b x + c,
+\end{align}
+with the condition $y(x) \leq y_A$. Therefore $y'(x) = 2a + b$. We also choose $y(x)$ to be convex, therefore $y(x)'' \geq 0$, which leads to $a \geq 0$. Since $x_A = 0$ and $y_A=0$, we have $c=0$. Finally, $b = y_B - a x_B^2$.
+
+
+
+
+\section*{Refs}
+
+% - Solving a Non-Existent Unsolved Problem: The Critical Brachistochrone : \href{http://klotza.blogspot.com/2015/08/the-critical-brachistochrone-solving.html}
+% - problemes : \href{http://www.dam.brown.edu/people/jgemmer/brachistochrone.html}
+
+
+
+\end{document}

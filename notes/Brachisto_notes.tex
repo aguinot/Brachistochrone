@@ -19,6 +19,12 @@
   urlcolor   = myurlcolor!\myshade!black,
   colorlinks = true,
 }
+\usepackage{ulem}
+\usepackage{tcolorbox}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{graphics}
+
 
 \title{Brachistochrone}
 \author{Sylvain Vanneste}
@@ -29,30 +35,109 @@
 \maketitle %This command prints the title based on information entered above
 
 
-\subsection*{Problem set up}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.1]{../code/images/FloatingIslands.png}
+\end{center}
+\caption{Floating Islands by PeterPrime on DeviantArt - 2013}
+\end{figure}
 
-On an other planet, similar to ours, some cities are built up int eh sky. The house and small neighborhood are isolated on floating rocks.  
+\subsection*{Warm up}
 
-Akara live up a cliff, and she would likes to send gifts via a roller-coster to her friend Buni which lives just a little further down in the valley. She built a tubular structure with super-conductive magnets, such that there is no air friction, as well as no contact friction (since the wagons are levitating). There is no engine, and the packages are simply dropped with no initial speed on the rail and left to the gravitational pull of earth.
+Legends say that on an other planet, similar to ours, some cities are built up in the sky. The houses and small neighbourhood are isolated on floating rocks, connected by cables and bridges. Appart from the mysterious mechanism that makes islands fly, the physic there is similar to ours.
 
-However, she would like to know which shape to give to its roller-coster in order to minimise the time a package takes to arrive to her friend.
+Akara lives on one of these floating islands, and she would like to send gifts via a roller-coster to her friend Bun which lives just a little further down on an other island. She built a special tubular structure filled with vacuum and very slippery walls. When a parcel is sent, no initial push is given, and it simply slides down the track under gravity pull, without any friction. However, she would like to know which shape to give to the rail in order to minimise the time a package takes to arrive to her friend.
+
+The situation is picture here after. Akara's house is up left, while Bun's island is down on the right. Three different rails are showed : the first one simply follows a \textit{straight} line; the second adopts a very \textit{steep} curve at the beginning, and flat at the end; and the third a curved path which good \textit{deep} under Bun's island level before going up to its house. As you may have guessed already, the goal is to choose the fastest route... or deduce and build a better one, or even \textit{the best route} ! Does it exist? And if so, does it depends on the mass of the object? Well, answers will follow. But first, as a warm up, let's try to guess if there is a fastest route, and if so, which of the tree paths is the fastest, and why. You can click on the \textit{start/stop} button after you think have a clue.
+
+% animation
+\subsubsection*{An intuitive approach}
+
+Well, what do you think about the result? Surprised? Counter-intuitive? Too easy? Probably a bug in the course writer's simulation code? Well a bit of physics will help understand what is happening here. Intuitively, we can see that as a package descends, it gains speed. The lower it is in relation to Akara's house, the faster it goes along the rail. Now, pause a moment, and think why the \textit{steep} is faster than \textit{straight} line, and why the \textit{deep} paths is the fastest. You can use the help of the animation above to observe what's going on.\\
+
+\begin{tcolorbox}
+
+\paragraph{Solution}
+
+The \textit{straight} line is a rough compromise between going toward Bun's house and going down to gain speed, and clearly, success is not there. The package looses too much time at the beginning. On the contrary, the first instants on the \textit{steep} curve are spent going down as fast as possible to gain speed, then use these speed to go right and reach destination. Finally, the \textit{deep} curve chooses to go rather deeply, maximising the velocity for a moment, before reaching Bun's island. This last approach is actually the fastest. We have our intuitive response! The curve which is the fastest should find a compromise between reaching high speed by going down, while still spending some time going to the right.
+
+\end{tcolorbox}
+~
+
+This is only the beginning of the story. Believe it or not, Akaras's questioning is a famous problem in physics which leads to beautiful solutions, and even paved the ground for calculus of variations among others.
+
+\subsubsection*{A challenge for the brightest}
+
+The challenge was proposed to mathematicians by Johann Bernoulli in June 1696 in a different and straighter form :
+\begin{center}
+  \textit{Given two points A and B in a vertical plane, what is the curve traced out by a point acted on only by gravity, which starts at A and reaches B in the shortest time.}
+\end{center}
+Such curve are was labelled \textit{Brachistochrone}, meaning 'shortest time' from Ancient Greek. For the record, according to Newton's niece, Catherine Conduitt, Newton red the letter of Johann Bernoulli on January 1697, and found a solution in the following night. In the following, you will learn multiple approaches which solve this problem.
 
 
 
-In order to picture the problem, we will consider the origin of the referential placed at Akara'house, and Buni coordinates are noted $(x_B, y_B)$. For the problem to be possible, we consider that Buni's house is lower than Akara's. That is to say, $y_B < 0$
+
+\subsubsection*{What do matters, what doesn't}
+
+Enough talking, here is a second question for you : is the mass of the package important for the path design of the rails? (remember, we can neglect all loss of speed due to friction). The answer is easy if you know a bit of Galileo's work. It is even considered as the first law of modern physics,\\
+
+\begin{tcolorbox}
+\begin{center}
+  \textit{In the vacuum, the speed of an object in free fall is independent of its mass}
+\end{center}
+\end{tcolorbox}
+~
+
+Well, it looks like this is the case for us, no vertical frictions is some kind of free fall, right?
+
+Mathematically, a similar conclusion arises when considering one of the fundamental postulate of modern physics : energy conservation. Knowing that the energy a package has is constant along the rails, and that it is equal to the sum of its kinetic and potential energy, $E_k$ and $E_p$ respectively, can you show why the speed $v$ does not depend on its mass $m$, and depends only on the height $y$ of the parcel from the ground? (well supposed there is a ground of course, nobody ever saw it from the city, many legends exists...)
+
+\begin{tcolorbox}
+
+\paragraph{Hints and steps of the solution : }
+
+\begin{enumerate}
+
+\item Remember, the kinetic energy reads $E_k=m v^2/2$, while the potential $E_p=m g y$, where $g\simeq 10 \,\text{m/s}^2$ is the free fall acceleration of any object on this planet (considered as constant locally).
+
+% \item Remember that nobody has ever see the ground? Well then, what is the heigh $y$ in that case? Simple, choose it! Let choose Akara's house as the ground, such that the initial heigh is zero,  $y=0$.
 
 
+\item The key is to write the total energy at any time :
+\begin{align}
+E &= E_k + E_p\nonumber\\
+&= \frac 12  mv^2 + m g y.\nonumber
+\end{align}
+Now, write down and simplify the energy of the parcel when it has not yet moved from Akara's island (located at height $y_A$), with the energy of the parcel when it is anywhere else.
 
-\subsection*{Historical introduction}
+\item Applying as suggested above,
+\begin{align}
+E_i &= E_{k,i} + E_{p,f}  = 0 + mgy_A ~~\text{(no initial velocity)}\nonumber\\
+E &= E_{k} + E_{p} = \frac 12  mv^2 + m g y ~~\text{(total energy when anywhere else)}\nonumber\\
+\rightarrow E &= E_i \nonumber~~\text{(energy conservation)} \\
+\Leftrightarrow~& \frac 12  \cancel{m}v^2 + \cancel{m} g y = \cancel{m}gy_i~~\text{(all mass terms cancel out !)}\nonumber \\
+\Leftrightarrow~& v = \sqrt{g (y - y_A)}\nonumber\\
+\Leftrightarrow~& \boxed{v = \sqrt{g \Delta y}}\nonumber ~~\text{with $\Delta y=y - y_A$, the distance from A's house}
+\end{align}
 
-Johann Bernoulli posed the same problem in June, 1696. Well, without the roller-coster and superconductive magnets part :
+\end{enumerate}
+\end{tcolorbox}
+~
 
-"Given two points A and B in a vertical plane, what is the curve traced out by a point acted on only by gravity, which starts at A and reaches B in the shortest time.
+That's right! From energy conservation, we deduce not only that the velocity in vacuum free fall does not depend on the mass $m$, but also that it is proportional to the square root of the distance from Akara's house, more exactly
+\begin{align}
+  \boxed{v = \sqrt{g \Delta y}}
+\end{align}
+Okay, this not only confirms our intuition, but provides an exact relation between speed and height as well. In addition, we make an important observation here : the motion speed of the body in free fall along an arbitrary curve does not depend on the horizontal displacement.
 
-At 4 p.m. on 29 January 1697 when he arrived home from the Royal Mint, Isaac Newton found the challenge in a letter from Johann Bernoulli. Newton stayed up all night to solve it and mailed the solution anonymously.
+Now what do we do next?
 
-In an attempt to outdo his brother, Jakob Bernoulli created a harder version of the brachistochrone problem. In solving it, he developed new methods that were refined by Leonhard Euler into what the latter called (in 1766) the calculus of variations. Joseph-Louis Lagrange did further work that resulted in modern infinitesimal calculus.
 
+Can you find a solution of the brachistochrone that time-minimizing curve is represented by a straight line in theta-t plot.
+
+\subsubsection*{next}
+
+\newpage
 \section*{Personal notes}
 
 We want to minimise the time it take for an object to goes from $A$ to $B$, $t_{AB}$. We define $v$ as the speed of the object, $g$ the gravitational constant, and $m$ the object's mass. The trajectory of the object can be defined by relation between its horizontal and vertical position, $y = f(x)$. For simplicity, we will write $y = y(x) = f(x)$.
@@ -133,13 +218,28 @@ y(x) = a x^2 + b x + c,
 with the condition $y(x) \leq y_A$. Therefore $y'(x) = 2a + b$. We also choose $y(x)$ to be convex, therefore $y(x)'' \geq 0$, which leads to $a \geq 0$. Since $x_A = 0$ and $y_A=0$, we have $c=0$. Finally, $b = y_B - a x_B^2$.
 
 
+\subsection*{Cycloid}
+
+Equation of motions are
+\begin{align}
+  x &= r(\phi - \sin(\phi))\\
+  y &= r(1 - \cos(\phi))
+\end{align}
+the parameter $r$ is the radius of the rotating cycle along the horizontal axis passing thought $x_A$, while $phi$ its angle of rotation (starting at $x_A$).
+
+The time is given by
+\begin{align}
+  t = \phi \sqrt{\frac rg}.
+\end{align}
+
+All three functions are interpolated by varying $\phi\in [0,\Phi]$, where $\Phi$ is the angle of rotation when $x=x_B$.
 
 
 \section*{Refs}
 
 % - Solving a Non-Existent Unsolved Problem: The Critical Brachistochrone : \href{http://klotza.blogspot.com/2015/08/the-critical-brachistochrone-solving.html}
-% - problemes : \href{http://www.dam.brown.edu/people/jgemmer/brachistochrone.html}
-
+% - problems : \href{http://www.dam.brown.edu/people/jgemmer/brachistochrone.html}
+% - parametrisation :  \href{https://proofwiki.org/wiki/Equation_of_Cycloid_in_Cartesian_Coordinates}
 
 
 \end{document}

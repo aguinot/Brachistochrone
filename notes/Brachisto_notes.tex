@@ -222,14 +222,27 @@ with the condition $y(x) \leq y_A$. Therefore $y'(x) = 2a + b$. We also choose $
 
 Equation of motions are
 \begin{align}
-  x &= r(\phi - \sin(\phi))\\
-  y &= r(1 - \cos(\phi))
+  x(r, \phi) &= r(\phi - \sin(\phi))\\
+  y(r, \phi) &= r(1 - \cos(\phi))
 \end{align}
-the parameter $r$ is the radius of the rotating cycle along the horizontal axis passing thought $x_A$, while $phi$ its angle of rotation (starting at $x_A$).
-
-The time is given by
+the parameter $r$ is the radius of the rotating cycle along the horizontal axis passing thought $x_A$, while $\phi$ its angle of rotation (starting at $x_A$). The value of $\Phi$ is computed by numerically solving the equation
 \begin{align}
-  t = \phi \sqrt{\frac rg}.
+  \frac{x_B}{y_B} = \frac{\Phi - \sin{\Phi}}{1 - \cos{\Phi}}.
+\end{align}
+
+From Fermat’s minimum time principle, we have
+\begin{align}
+  \frac{dx}{ds} = \frac{v}{v_m}
+\end{align}
+with $v_m = \sqrt{4gr}$. Therefore,
+
+The time function is given by
+\begin{align}
+  t &= \int_{A}^{B} \frac{ds}{v}\\
+  & = v_m \int_{A}^{B} \frac{dx}{v^2}\\
+  & = v_m \int_{A}^{B} \frac{dx}{2 gy}\\
+  & = v_m \int_{0}^{\phi} \frac{r(1 - \cos(\phi))}{2 gr(1-\cos(\phi))}d\phi\\
+  & = \phi \sqrt{\frac rg}.
 \end{align}
 
 All three functions are interpolated by varying $\phi\in [0,\Phi]$, where $\Phi$ is the angle of rotation when $x=x_B$.

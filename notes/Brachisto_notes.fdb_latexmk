@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1600831685 "Brachisto_notes.tex" "Brachisto_notes.pdf" "Brachisto_notes" 1600831705
+["pdflatex"] 1600873843 "Brachisto_notes.tex" "Brachisto_notes.pdf" "Brachisto_notes" 1600873872
   "../code/images/FloatingIslands.png" 1600423625 1234341 c4fc47fefb6519c3fb91a2501001c4e7 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -109,6 +109,7 @@
   "/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty" 1523134290 2432 8ff93b1137020e8f21930562a874ae66 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls" 1544567569 19933 3097d1b31d3c45dc957096f554529032 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty" 1544567569 5052 b64c57f4a38aae0d2745f8298fa50814 ""
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd" 1523050425 2472 aa08940f0a4dc6c24ae9f943b04ae0b9 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo" 1544567569 8294 6d6e23d5169c0d89d173f6c7e08a005a ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/cancel/cancel.sty" 1388445839 7592 dd751af313a16a0308545d5bfd7aaaa2 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/colortbl/colortbl.sty" 1544741426 10678 47854138cd4fdca1d7b24b0290c999d4 ""
@@ -153,11 +154,11 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1576080087 4259637 0ed3101e6b763bc88487accd07975461 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Brachisto_notes.aux" 1600831686 1444 26ceae141370c0b5e9c636ef63f2448e "pdflatex"
-  "Brachisto_notes.out" 1600831686 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Brachisto_notes.tex" 1600831705 14404 b4f0b4b7c8f55287d023a4ff9c989191 ""
+  "Brachisto_notes.aux" 1600873844 1451 4e7d88dffaf9127cd9141dbd56793096 "pdflatex"
+  "Brachisto_notes.out" 1600873843 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Brachisto_notes.tex" 1600873871 16100 4a72c00041196b97c2fab7f350dd289c ""
   (generated)
+  "Brachisto_notes.aux"
   "Brachisto_notes.log"
   "Brachisto_notes.pdf"
-  "Brachisto_notes.aux"
   "Brachisto_notes.out"

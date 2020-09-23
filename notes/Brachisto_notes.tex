@@ -53,33 +53,38 @@ The situation is picture here after. Akara's house is up left, while Bun's islan
 % animation
 \subsubsection*{An intuitive approach}
 
-Well, what do you think about the result? Surprised? Counter-intuitive? Too easy? Probably a bug in the course writer's simulation code? Well a bit of physics will help understand what is happening here. Intuitively, we can see that as a package descends, it gains speed. The lower it is in relation to Akara's house, the faster it goes along the rail. Now, pause a moment, and think why the \textit{steep} is faster than \textit{straight} line, and why the \textit{deep} paths is the fastest. You can use the help of the animation above to observe what's going on.\\
+Well, what do you think about the result? Surprised? Counter-intuitive? Too easy? Probably a bug in the course writer's simulation code? Now, pause a moment, and think why the \textit{steep} is faster than \textit{straight} line, and why the \textit{deep} paths is the fastest. You can use the help of the animation above to observe what's going on.\\
 
 \begin{tcolorbox}
 
-\paragraph{Solution}
-
-The \textit{straight} line is a rough compromise between going toward Bun's house and going down to gain speed, and clearly, success is not there. The package looses too much time at the beginning. On the contrary, the first instants on the \textit{steep} curve are spent going down as fast as possible to gain speed, then use these speed to go right and reach destination. Finally, the \textit{deep} curve chooses to go rather deeply, maximising the velocity for a moment, before reaching Bun's island. This last approach is actually the fastest. We have our intuitive response! The curve which is the fastest should find a compromise between reaching high speed by going down, while still spending some time going to the right.
-
+\paragraph{Hints and solution}
+\begin{itemize}
+  \item A bit of physics will help understand what is happening here. Intuitively, we can see that as a package descends, it gains speed. The lower it is in relation to Akara's house, the faster it goes along the rail.
+  \item Although the \textit{straight} line is the \textit{shortest} distant, is it by far the slowest. The trajectory a rough compromise between going toward Bun's house and going down to gain speed, and clearly, success is not there. The package looses too much time at the beginning.
+  \item On the contrary, the first instants on the \textit{steep} curve are spent going down as fast as possible to gain speed, then use these speed to go right and reach destination.
+  \item Finally, the \textit{deep} curve chooses to go rather deeply, maximising the velocity for a moment, before reaching Bun's island. This last approach is actually the fastest.
+\end{itemize}
 \end{tcolorbox}
 ~
 
-This is only the beginning of the story. Believe it or not, Akaras's questioning is a famous problem in physics which leads to beautiful solutions, and even paved the ground for calculus of variations among others.
+We have our intuitive solution! The curve which is the fastest should find a compromise between reaching high speed by going down, while still spending some time going to the right.
+
+This is only the beginning of the story. Believe it or not, Akaras's questioning is a famous problem in physics which leads to beautiful and multiple theoretical and experimental demonstration.
 
 \subsubsection*{A challenge for the brightest}
 
-The challenge was proposed to mathematicians by Johann Bernoulli in June 1696 in a different and straighter form :
+This challenge was proposed to mathematicians by Johann Bernoulli in June 1696 in a straighter form :
 \begin{center}
   \textit{Given two points A and B in a vertical plane, what is the curve traced out by a point acted on only by gravity, which starts at A and reaches B in the shortest time.}
 \end{center}
-Such curve are was labelled \textit{Brachistochrone}, meaning 'shortest time' from Ancient Greek. For the record, according to Newton's niece, Catherine Conduitt, Newton red the letter of Johann Bernoulli on January 1697, and found a solution in the following night. In the following, you will learn multiple approaches which solve this problem.
-
-
+Such curve are was labelled \textit{Brachistochrone}, meaning 'shortest time' from Ancient Greek. For the record, according to Newton's niece, Catherine Conduitt, Newton red the letter of Johann Bernoulli on January 1697, and found a solution in late in that night. In the following, we will discover some approaches which solve this problem in a beautiful way.
 
 
 \subsubsection*{What do matters, what doesn't}
 
-Enough talking, here is a second question for you : is the mass of the package important for the path design of the rails? (remember, we can neglect all loss of speed due to friction). The answer is easy if you know a bit of Galileo's work. It is even considered as the first law of modern physics,\\
+Enough talking, here is a second question for you : is the mass of the package important for the path design of the rails? (remember, we can neglect all loss of speed due to friction).
+
+The answer is immediate if you know a bit of Galileo's work. It is even considered as the first law of modern physics :\\
 
 \begin{tcolorbox}
 \begin{center}
@@ -90,15 +95,17 @@ Enough talking, here is a second question for you : is the mass of the package i
 
 Well, it looks like this is the case for us, no vertical frictions is some kind of free fall, right?
 
-Mathematically, a similar conclusion arises when considering one of the fundamental postulate of modern physics : energy conservation. Knowing that the energy a package has is constant along the rails, and that it is equal to the sum of its kinetic and potential energy, $E_k$ and $E_p$ respectively, can you show why the speed $v$ does not depend on its mass $m$, and depends only on the height $y$ of the parcel from the ground? (well supposed there is a ground of course, nobody ever saw it from the city, many legends exists...)
+Mathematically, a similar conclusion arises when considering one of the fundamental postulate of modern physics : energy conservation. Knowing that the energy a package has is constant along the rails, and that it is equal to the sum of its kinetic and potential energy, $E_k$ and $E_p$ respectively, can you show why the speed $v$ at anytime during the descent does not depend on its mass $m$, and depends only on the height $y$ of the parcel from the ground? (well supposed there is a ground of course, nobody ever saw it from the city, many legends exists...)
 
 \begin{tcolorbox}
 
-\paragraph{Hints and steps of the solution : }
+\paragraph{Hints and steps of the solution}
 
 \begin{enumerate}
 
-\item Remember, the kinetic energy reads $E_k=m v^2/2$, while the potential $E_p=m g y$, where $g\simeq 10 \,\text{m/s}^2$ is the free fall acceleration of any object on this planet (considered as constant locally).
+\item In physics, the concept of an object \text{energy} is very abstract. It serves to quantify the capability of this object to do some \textit{work}. Well, what is \textit{work}? It is a slightly less abstract quantity, which pictures the process of converting this energy into motion via application of a force (the snake probably slightly bites its tail here). A simple example is the potential energy of a trebuchet. As the counter-weights are manually levered, they accumulate potential energy. When the weights are released, they briefly transfer all their energy into the projectile via the trebuchet arm. The projectile undergo a huge force, which accelerate it. Some of the initial potential energy of the weights are now present in the form of kinetic energy for the projectile. The rest of the energy is transferred elsewhere during the shot via frictions and heat.
+
+\item The kinetic energy reads $E_k=m v^2/2$, while the potential $E_p=m g y$, where $g\simeq 10 \,\text{m/s}^2$ is the free fall acceleration of any object on this planet (considered as constant locally). Now remember the postulate of energy conservation : the parcel \textit{total} energy (potential+kinetic) is constant along the rail. Therefore, if as it looses some potential energy, it should acquire equivalently some kinetic energy.
 
 % \item Remember that nobody has ever see the ground? Well then, what is the heigh $y$ in that case? Simple, choose it! Let choose Akara's house as the ground, such that the initial heigh is zero,  $y=0$.
 
@@ -108,32 +115,40 @@ Mathematically, a similar conclusion arises when considering one of the fundamen
 E &= E_k + E_p\nonumber\\
 &= \frac 12  mv^2 + m g y.\nonumber
 \end{align}
-Now, write down and simplify the energy of the parcel when it has not yet moved from Akara's island (located at height $y_A$), with the energy of the parcel when it is anywhere else.
+Now, write down and simplify the initial energy $E_i$ of the parcel when it has not yet moved from Akara's island (located at height $y_A$), with the energy of the parcel when it is anywhere else, $E$.
 
 \item Applying as suggested above,
 \begin{align}
-E_i &= E_{k,i} + E_{p,f}  = 0 + mgy_A ~~\text{(no initial velocity)}\nonumber\\
+E_i &= E_{k,i} + E_{p,i}  = 0 + mgy_A ~~\text{(initial kinetic energy is null.)}\nonumber\\
 E &= E_{k} + E_{p} = \frac 12  mv^2 + m g y ~~\text{(total energy when anywhere else)}\nonumber\\
 \rightarrow E &= E_i \nonumber~~\text{(energy conservation)} \\
 \Leftrightarrow~& \frac 12  \cancel{m}v^2 + \cancel{m} g y = \cancel{m}gy_i~~\text{(all mass terms cancel out !)}\nonumber \\
 \Leftrightarrow~& v = \sqrt{g (y - y_A)}\nonumber\\
-\Leftrightarrow~& \boxed{v = \sqrt{g \Delta y}}\nonumber ~~\text{with $\Delta y=y - y_A$, the distance from A's house}
+\Leftrightarrow~& \boxed{v(y) = \sqrt{g \Delta y}}\nonumber ~~\text{with $\Delta y=y - y_A$, the distance from A's house}
 \end{align}
 
 \end{enumerate}
 \end{tcolorbox}
 ~
 
-That's right! From energy conservation, we deduce not only that the velocity in vacuum free fall does not depend on the mass $m$, but also that it is proportional to the square root of the distance from Akara's house, more exactly
+That's right! From energy conservation, we deduce not only that the velocity in vacuum free fall does not depend on the mass $m$, but also that it is proportional to the square root of the distance from Akara's house. We can express it as a function of time the height $y$
 \begin{align}
-  \boxed{v = \sqrt{g \Delta y}}
+  \boxed{v(y) = \sqrt{g (y - y_A)}}
 \end{align}
 Okay, this not only confirms our intuition, but provides an exact relation between speed and height as well. In addition, we make an important observation here : the motion speed of the body in free fall along an arbitrary curve does not depend on the horizontal displacement.
+
+\subsubsection*{next}
+
+
+
 
 Now what do we do next?
 
 
-Can you find a solution of the brachistochrone that time-minimizing curve is represented by a straight line in theta-t plot.
+- Can you find a solution of the brachistochrone that time-minimizing curve is represented by a straight line in theta-t plot.
+
+- Tautochrone
+
 
 \subsubsection*{next}
 
@@ -225,18 +240,17 @@ Equation of motions are
   x(r, \phi) &= r(\phi - \sin(\phi))\\
   y(r, \phi) &= r(1 - \cos(\phi))
 \end{align}
-the parameter $r$ is the radius of the rotating cycle along the horizontal axis passing thought $x_A$, while $\phi$ its angle of rotation (starting at $x_A$). The value of $\Phi$ is computed by numerically solving the equation
+the parameter $r$ is the radius of the rotating cycle along the horizontal axis passing thought $x_A$, while $\phi$ its angle of rotation (starting at $x_A$). The value of $\Phi$ is computed by numerically solving the equation,
 \begin{align}
-  \frac{x_B}{y_B} = \frac{\Phi - \sin{\Phi}}{1 - \cos{\Phi}}.
+  \frac{x_B}{y_B} = \frac{\Phi - \sin{\Phi}}{1 - \cos{\Phi}},
 \end{align}
+while the radius is computed using $r=x_B/(\Phi - \sin(\Phi))$.
 
 From Fermat’s minimum time principle, we have
 \begin{align}
-  \frac{dx}{ds} = \frac{v}{v_m}
+  \frac{dx}{ds} = \frac{v}{v_m},
 \end{align}
-with $v_m = \sqrt{4gr}$. Therefore,
-
-The time function is given by
+with $v_m = 2\sqrt{gr}$ the maximum speed, at the bottom of the curve, when $y=2r$. Therefore, the time function is given by
 \begin{align}
   t &= \int_{A}^{B} \frac{ds}{v}\\
   & = v_m \int_{A}^{B} \frac{dx}{v^2}\\
@@ -245,7 +259,7 @@ The time function is given by
   & = \phi \sqrt{\frac rg}.
 \end{align}
 
-All three functions are interpolated by varying $\phi\in [0,\Phi]$, where $\Phi$ is the angle of rotation when $x=x_B$.
+All three functions $x, y, t$, are interpolated by varying $\phi\in [0,\Phi]$, where $\Phi$ is the angle of rotation when $x=x_B$.
 
 
 \section*{Refs}
@@ -253,6 +267,7 @@ All three functions are interpolated by varying $\phi\in [0,\Phi]$, where $\Phi$
 % - Solving a Non-Existent Unsolved Problem: The Critical Brachistochrone : \href{http://klotza.blogspot.com/2015/08/the-critical-brachistochrone-solving.html}
 % - problems : \href{http://www.dam.brown.edu/people/jgemmer/brachistochrone.html}
 % - parametrisation :  \href{https://proofwiki.org/wiki/Equation_of_Cycloid_in_Cartesian_Coordinates}
-
+% vieux site : https://mathcurve.com/courbes2d.gb/brachistochrone/brachistochrone.shtml
+% - https://mathcurve.com/courbes2d.gb/brachistochrone/bachistodelongueurfixe.shtml
 
 \end{document}

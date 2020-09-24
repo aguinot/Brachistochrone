@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.11)  23 SEP 2020 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.11)  24 SEP 2020 00:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -714,19 +714,19 @@ Overfull \hbox (12.3816pt too wide) detected at line 128
  []
 
 [3] [4] [5] [6] [7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 275.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 275.
  (./Brachisto_notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 275.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 275.
 Package rerunfilecheck Info: File `Brachisto_notes.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 273.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 275.
  ) 
 Here is how much of TeX's memory you used:
  16689 strings out of 492616
  307356 string characters out of 6129480
- 403860 words of memory out of 5000000
+ 403858 words of memory out of 5000000
  20259 multiletter control sequences out of 15000+600000
  11955 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -745,7 +745,7 @@ live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
 e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on Brachisto_notes.pdf (8 pages, 1991742 bytes).
+Output written on Brachisto_notes.pdf (8 pages, 1991729 bytes).
 PDF statistics:
  159 PDF objects out of 1000 (max. 8388607)
  132 compressed objects within 2 object streams

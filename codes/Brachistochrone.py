@@ -206,9 +206,9 @@ rec_y_x = recfunc.get_y_x(xline)
 rec_t_x = recfunc.get_t_x(xline)
 
 
-# polfunc = Polynom2nd(A, B, 0.05)
-# pol_y_x = polfunc.get_y_x(xline)
-# pol_t_x = polfunc.get_t_x(xline)
+polfunc = Polynom2nd(A, B, 0.05)
+pol_y_x = polfunc.get_y_x(xline)
+pol_t_x = polfunc.get_t_x(xline)
 
 fig, ax = plt.subplots(num="trajectories")
 plt.clf()
@@ -363,3 +363,46 @@ brun.on_clicked(callback.run)
 # # axreset = plt.axes([0.5, 0.75, 0.15, 0.075])
 # # breset = Button(axreset, 'Reset')
 # # breset.on_clicked(callback.reset)
+
+
+##########
+########## Height
+##########
+
+plt.figure()
+plt.clf()
+yline = -np.linspace(0, B[1]*2, 100)
+v_y = np.sqrt(2*g*yline)
+v_y_1 = yline
+v_y_2 = v_y[-1]-np.sqrt(2*g*yline)
+
+plt.plot(yline, v_y_1, label="Curve 1")
+plt.plot(yline, v_y, label="Curve 2")
+plt.plot(yline, v_y_2, label="Curve 3")
+plt.xlabel(r"Heigh separation $\Delta y = y_A - y\,[m]$",fontweight='bold')
+plt.ylabel(r"Speed $v(y) = \sqrt{2 g \Delta y}\,[m/s]$ ",fontweight='bold')
+plt.grid()
+plt.legend(loc=9)
+plt.savefig("images/speed_y.jpg")
+
+##########
+##########
+##########
+
+
+fig, ax = plt.subplots(num="speed vector")
+plt.clf()
+
+plt.subplot(2, 1, 1)
+plt.plot(xline, str_y_x, label="straight", color='C1')
+plt.plot(xline, rec_y_x, label="reciprocal", color='C2')
+plt.plot(xline, cyc_y_x, label="Cycloid", color='C3')
+# plt.plot(xline, pol_y_x, label="2nd order polynomial", color='C4')
+plt.plot(A[0], A[1], 's', color='k')
+plt.plot(B[0], B[1], 's', color='k')
+plt.xlim(A[0]-1, B[0]+1)
+plt.ylim(np.amin([str_y_x, rec_y_x, cyc_y_x])-1, 1)
+plt.grid()
+plt.xlabel(r"distance $x$ [m]")
+plt.ylabel(r"height $y$ [m]")
+plt.legend(loc=1)

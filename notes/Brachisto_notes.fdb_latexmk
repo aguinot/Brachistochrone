@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1601241859 "Brachisto_notes.tex" "Brachisto_notes.pdf" "Brachisto_notes" 1601241862
+["pdflatex"] 1601242895 "Brachisto_notes.tex" "Brachisto_notes.pdf" "Brachisto_notes" 1601242898
   "../codes/images/BrachistochroneCoordinates3.png" 1601038762 445329 069beac8edfe67b3524508c4b9c38def ""
   "../codes/images/FloatingIslands.png" 1600423625 1234341 c4fc47fefb6519c3fb91a2501001c4e7 ""
   "../codes/images/freefall2.mp4" 1600993007 69724 cfe09802c3d48b3db423fc2b9fd012ed ""
-  "/dev/null" 1601241858 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/dev/null" 1601242898 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -148,6 +148,7 @@
   "/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/hyperref.cfg" 1254097189 235 6031e5765137be07eed51a510b2b8fb7 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/media9/media9.sty" 1556922621 80961 ff6f2c68cdcade29ce9e70a1a96e83fb ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/media9/pdfbase.sty" 1556922621 50028 955fbc3d2c33d9a49d78ea7519a361cb ""
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/media9/players/VPlayer.swf" 1516317912 483412 ed024b2e84678643740899a5b99e2e70 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty" 1177890616 3878 6aa7c08ff2621006e0603349e40a30a8 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/auxhook.sty" 1463608860 3834 4363110eb0ef1eb2b71c8fcbcdb6c357 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty" 1463608860 12095 5337833c991d80788a43d3ce26bd1c46 ""
@@ -176,11 +177,11 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1576080087 4259637 0ed3101e6b763bc88487accd07975461 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Brachisto_notes.aux" 1601241862 2010 ea3dd5368568dae012ef4ba6c35d9dd1 "pdflatex"
-  "Brachisto_notes.out" 1601241860 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Brachisto_notes.tex" 1601241859 16362 891eadcb0442faa545bd5c5a1a1e5d4f ""
+  "Brachisto_notes.aux" 1601242897 2056 5a92c915976b8c19591e885d6b532a17 "pdflatex"
+  "Brachisto_notes.out" 1601242896 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Brachisto_notes.tex" 1601242891 16856 c5b6120bf41adf7610addb406bf7b67b ""
   (generated)
-  "Brachisto_notes.aux"
-  "Brachisto_notes.pdf"
   "Brachisto_notes.log"
+  "Brachisto_notes.pdf"
+  "Brachisto_notes.aux"
   "Brachisto_notes.out"

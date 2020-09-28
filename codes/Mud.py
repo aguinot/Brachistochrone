@@ -40,6 +40,8 @@ ax.imshow(arr_igloo, extent=[B[0]-0.2, B[0]+0.2, B[1]-0.0, B[1]+0.4])
 # Pixelmeetup
 plt.text(-0.9, -0.5, r"Mud", fontweight='bold')
 plt.text(-0.9, -1.7, r"Snow", fontweight='bold')
+l1, = ax.plot([A[0], D[0]], [A[1], D[1]], "--", color="C3", lw=2)
+l2, = ax.plot([D[0], B[0]], [D[1], B[1]], "--", color="C2", lw=2)
 plt.savefig("images/mud1.jpg")
 
 

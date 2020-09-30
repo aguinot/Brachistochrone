@@ -106,7 +106,7 @@ plt.vlines(x, , ls=":", color="k", lw=1)
 fig, ax = plt.subplots(figsize=[10, 4])
 plt.clf()
 ax = plt.gca()
-xline = np.linspace(-1, 5, 100)
+xline = np.linspace(-1, 5, 1000)
 v1 = 1.0/2.0
 v2 = 1.0
 a = 1
@@ -116,5 +116,10 @@ time = np.sqrt(a*a + xline*xline)/v1 +  np.sqrt((m-xline)**2 + (b-a)**2)/v2
 plt.plot(xline, time)
 ax.set_xlabel(r"position $x \,\rm{[m]}$", fontweight='bold')
 ax.set_ylabel(r"time $t \,\rm{[s]}$", fontweight='bold')
-
+ax.text(3, 9, r"$t(x)$")
 plt.savefig("images/generaltime.jpg")
+
+
+xline = np.linspace(0, 1, 1000000)
+time = np.sqrt(a*a + xline*xline)/v1 +  np.sqrt((m-xline)**2 + (b-a)**2)/v2
+xline[np.argmin(time)]

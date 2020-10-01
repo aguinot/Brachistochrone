@@ -406,3 +406,55 @@ plt.grid()
 plt.xlabel(r"distance $x$ [m]")
 plt.ylabel(r"height $y$ [m]")
 plt.legend(loc=1)
+
+
+###############
+############## layers
+
+fig, ax = plt.subplots(figsize=[10, 5])
+plt.clf()
+ax=plt.gca()
+plt.axis('on')
+
+arr_floatinghouse1 = mpimg.imread('images/floatinghouse1.png')
+arr_floatinghouse2 = mpimg.imread('images/floatinghouse2.png')
+arr_floatinghouse3 = mpimg.imread('images/floatinghouse3.png')
+arr_cloud = mpimg.imread('images/Clouds-07.png')
+
+ax.imshow(arr_floatinghouse1, extent=[A[0]-4, A[0]+0.1, A[1]-2, A[1]+2])
+ax.imshow(arr_floatinghouse2, extent=[B[0]-0.1, B[0]+4, B[1]-1.6, B[1]+2.1])
+ax.imshow(arr_cloud, extent=[(-A[0]+B[0])/2., (-A[0]+B[0])/2.+6, A[1]-2, A[1]+4])
+
+ax.legend(loc=1)
+
+
+nfill = 10
+ymin=-12
+yfill = ymin
+for ifill in np.arange(nfill):
+    yfill -= ymin/nfill
+    plt.fill_between([A[0]-2, B[0]+2],[ymin, ymin], [yfill, yfill], color='b', alpha=0.5/nfill)
+
+plt.xlim(A[0]-4, B[0]+4)
+# plt.ylim(np.amin([str_y_x, rec_y_x, cyc_y_x]), 3)
+plt.ylim(-12, 3)
+
+ymincyc = 2*cycfunc.r
+vm = np.sqrt(2*g*ymincyc)
+bandwidth = ymincyc/nfill
+
+(x0, y0) = A
+(xn, yn) = A
+incr = -1
+while (xn < B[0]):
+    incr +=1
+    v = np.sqrt(2*g*(incr+0.5)*bandwidth)
+    vratio = v/vm
+    #theta = np.arcsin(vratio)
+    print(1-vratio)
+    x0 = xn
+    y0 = yn
+    yn = y0 - bandwidth
+    xn = x0 - (yn+y0)/vratio
+
+    plt.plot([x0, xn], [y0, yn])

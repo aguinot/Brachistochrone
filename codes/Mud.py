@@ -120,6 +120,6 @@ ax.text(3, 9, r"$t(x)$")
 plt.savefig("images/generaltime.jpg")
 
 
-xline = np.linspace(0, 1, 1000000)
+xline = np.linspace(0.5, 0.6, 10000000)
 time = np.sqrt(a*a + xline*xline)/v1 +  np.sqrt((m-xline)**2 + (b-a)**2)/v2
 xline[np.argmin(time)]

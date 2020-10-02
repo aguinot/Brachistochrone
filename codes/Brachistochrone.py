@@ -479,3 +479,99 @@ while (xn < B[0]):
 plt.xlabel(r"distance $x$ [m]")
 plt.ylabel(r"height $y$ [m]")
 plt.savefig("images/Brachiosto_discontinuous_snell_n%i.jpg" % nfill)
+
+
+############# cycloid animation
+
+
+def init():
+    point_cyc.set_data(A[0], A[1])
+    # point_rec.set_data(A[0], A[1])
+
+    circle.center =(0, -cycfunc.r)
+    plt.xlim(A[0]-4, B[0]+4)
+    plt.ylim(np.amin([str_y_x, rec_y_x, cyc_y_x])-2, 4)
+    return [point_cyc, circle] #, point_rec, point_str]
+
+def data_gen(fps, tend):
+    gen_list = ([t] for t in np.linspace(0, tend, tend*fps))
+    # gen_list = np.array([t for t in np.linspace(0, tend, tend*fps)])
+    return gen_list
+
+def run(time):
+    # str_x_t = strfunc.get_x_t(time)
+    # rec_x_t = recfunc.get_x_t(time)
+    cyc_x_t = cycfunc.get_x_t(time)
+    # pol_x_t = polfunc.get_x_t(time)
+
+    # str_x_t = B[0] if str_x_t>B[0] else str_x_t
+    if cyc_x_t>=B[0]:
+        cyc_x_t = B[0]
+        circlepos = cycfunc.r*np.sqrt(g/cycfunc.r)*cycfunc.get_t_x(B[0])
+        circle.center =(circlepos, -cycfunc.r)
+    else:
+        circlepos = cycfunc.r*np.sqrt(g/cycfunc.r)*time[0]
+        circle.center =(circlepos, -cycfunc.r)
+
+
+    # str_yi = strfunc.get_y_x(str_x_t)
+    # rec_yi = recfunc.get_y_x(rec_x_t)
+    cyc_yi = cycfunc.get_y_x(cyc_x_t)
+    # pol_yi = polfunc.get_y_x(pol_x_t)
+
+    plt.xlim(A[0]-4, B[0]+4)
+    plt.ylim(np.amin([str_y_x, rec_y_x, cyc_y_x])-2, 4)
+
+    ax.figure.canvas.draw()
+
+    point_cyc.set_data(cyc_x_t, cyc_yi) #, label="deep, time=%.1f"%time_pol)
+    # point_rec.set_data(rec_x_t, rec_yi) #, label="steep, time=%.1f"%time_rec)
+    # point_str.set_data(str_x_t, str_yi) #, label="straight, time=%.1f"%time_str)
+
+    # point_pol.set_data(pol_x_t, pol_yi) #, label="deep, time=%.1f"%time_pol)
+
+
+    return [point_cyc, circle] #[point_cyc, point_rec, point_str]
+
+
+
+plt.close()
+fig, ax = plt.subplots(figsize=[10, 5])
+plt.clf()
+ax=plt.gca()
+plt.axis('on')
+
+arr_floatinghouse1 = mpimg.imread('images/floatinghouse1.png')
+arr_floatinghouse2 = mpimg.imread('images/floatinghouse2.png')
+arr_floatinghouse3 = mpimg.imread('images/floatinghouse3.png')
+arr_cloud = mpimg.imread('images/Clouds-07.png')
+
+ax.imshow(arr_floatinghouse1, extent=[A[0]-4, A[0]+0.1, A[1]-2, A[1]+2], alpha=0.3)
+ax.imshow(arr_floatinghouse2, extent=[B[0]-0.1, B[0]+4, B[1]-1.6, B[1]+2.1], alpha=0.3)
+ax.imshow(arr_cloud, extent=[(-A[0]+B[0])/2., (-A[0]+B[0])/2.+6, A[1]-2, A[1]+4], alpha=0.3)
+
+point_cyc, = ax.plot([A[0]], [A[1]], 'o', color="C3", alpha=1)
+plt.plot(xline, cyc_y_x, label="Straight", color='C1', alpha=0.5)
+
+circle = plt.Circle((0, -cycfunc.r), cycfunc.r, fill=False)
+ax.add_artist(circle)
+circle.center = (0, -cycfunc.r)
+
+ax.legend(loc=1)
+plt.xlim(A[0]-4, B[0]+4)
+
+plt.xlim(A[0]-4, B[0]+4)
+# plt.ylim(np.amin([str_y_x, rec_y_x, cyc_y_x]), 3)
+plt.ylim(-12, 3)
+
+
+tend = 6 # seconds
+fps = 15
+interval = 1
+anim = animation.FuncAnimation(fig, run, data_gen(fps, tend), interval=interval, init_func=init)#, blit=True)
+
+
+Writer = animation.writers['ffmpeg']
+writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=1800)
+
+self.anim.save('cycloid.mp4', writer=writer)

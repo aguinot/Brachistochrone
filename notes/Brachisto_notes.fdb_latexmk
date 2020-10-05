@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1601480976 "Brachisto_notes.tex" "Brachisto_notes.pdf" "Brachisto_notes" 1601678281
+["pdflatex"] 1601480976 "Brachisto_notes.tex" "Brachisto_notes.pdf" "Brachisto_notes" 1601921683
   "../codes/images/FloatingIslands.png" 1600423625 1234341 c4fc47fefb6519c3fb91a2501001c4e7 ""
-  "/dev/null" 1601678281 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/dev/null" 1601921682 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -167,9 +167,9 @@
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
   "Brachisto_notes.aux" 1601480978 1853 17ea58a5396d1de5f82f159e14409dbb "pdflatex"
   "Brachisto_notes.out" 1601480978 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Brachisto_notes.tex" 1601678281 16925 6b203d331aa34e87d0ea3828d3dd76d6 ""
+  "Brachisto_notes.tex" 1601921682 16925 6b203d331aa34e87d0ea3828d3dd76d6 ""
   (generated)
-  "Brachisto_notes.log"
   "Brachisto_notes.pdf"
-  "Brachisto_notes.out"
+  "Brachisto_notes.log"
   "Brachisto_notes.aux"
+  "Brachisto_notes.out"
